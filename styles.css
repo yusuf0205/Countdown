@@ -35,6 +35,11 @@ h1.tech-title {
   text-shadow: 0 0 1vw rgba(64, 201, 255, 0.8);
 }
 
+.tech-title:hover {
+  transform: scale(1.05);
+  transition: opacity 0.7s ease, transform 0.3s ease;
+}
+
 /* Countdown container */
 #countdown {
   display: flex;
