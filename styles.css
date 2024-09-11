@@ -50,6 +50,12 @@ h1.tech-title {
   gap: 2vw; /* Space between elements */
 }
 
+p.Bottom-text{
+  color: #40c9ff;
+  font-size: 20px;
+  text-shadow: 0 0 1vw rgba(64, 201, 255, 0.8);
+}
+
 .time-section {
   background: linear-gradient(145deg, #1e1e2e, #14142b); /* Gradient */
   padding: 2vw;
