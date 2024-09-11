@@ -1,135 +1,126 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b0f16; /* Dark theme */
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Container to hold everything centrally */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Full width for responsiveness */
+}
+
+h1.tech-title {
+  font-size: 4vw; /* Use viewport width for font scaling */
+  color: #40c9ff; /* Soft tech blue */
+  margin-bottom: 5vh; /* Use viewport height for consistent spacing */
+  text-transform: uppercase;
+  letter-spacing: 0.5vw;
+  text-shadow: 0 0 1vw rgba(64, 201, 255, 0.8);
+}
+
+/* Countdown container */
+#countdown {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Full width for responsive flex layout */
+  max-width: 80vw; /* Control max width on larger screens */
+  font-size: 3.5vw; /* Responsive text size */
+  gap: 2vw; /* Space between elements */
+}
+
+/* Make sure all time sections have the same size */
+.time-section {
+  width: 18vw; /* Fixed width for uniform size */
+  height: 18vw; /* Fixed height for uniform size */
+  background: linear-gradient(145deg, #1e1e2e, #14142b); /* Gradient */
+  padding: 2vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8), inset 0 0 1.5vw rgba(64, 201, 255, 0.1); /* Subtle glow */
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-section:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #2c2f4f, #14142b); /* Darker gradient on hover */
+}
+
+.time-section p {
+  margin-top: 1.5vw;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  color: #40c9ff;
+}
+
+span.tech-time {
+  font-size: 5vw; /* Large responsive digits */
+  display: block;
+  color: #fff;
+  text-shadow: 0 0 2vw rgba(64, 201, 255, 0.8);
+  transition: opacity 0.7s ease, transform 0.3s ease;
+}
+
+/* Flip animation for time change */
+span.tech-time {
+  animation: flipIn 0.8s ease;
+}
+
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
   }
-  
-  body {
-    background-color: #0b0f16; /* Deep dark blue for a high-tech look */
-    color: #e0e0e0; /* Light gray for text */
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    padding: 20px; /* Padding for mobile devices */
+  100% {
+    opacity: 1;
+    transform: rotateX(0);
   }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+}
+
+/* Responsive Design Adjustments */
+
+/* For smaller mobile devices */
+@media (max-width: 480px) {
   h1.tech-title {
-    font-size: 40px;
-    color: #40c9ff; /* Soft tech blue */
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 0 8px rgba(64, 201, 255, 0.8);
+    font-size: 7vw; /* Larger title for small devices */
+    margin-bottom: 3vh;
   }
-  
-  /* Countdown container */
+
   #countdown {
-    display: flex;
-    gap: 30px;
-    font-size: 28px;
+    gap: 3vw; /* Wider gaps between elements */
   }
-  
+
   .time-section {
-    background: linear-gradient(145deg, #1e1e2e, #14142b); /* Gradient for high-tech feel */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(64, 201, 255, 0.1); /* Futuristic glow */
-    transition: transform 0.3s ease;
+    width: 24vw; /* Adjust width for mobile screens */
+    height: 24vw; /* Adjust height for mobile screens */
+    padding: 3vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), inset 0 0 2vw rgba(64, 201, 255, 0.2); /* Slightly stronger glow for visibility */
   }
-  
-  .time-section:hover {
-    transform: scale(1.05);
+
+  span.tech-time {
+    font-size: 8vw; /* Bigger digits for small screens */
   }
-  
+
   .time-section p {
-    margin-top: 10px;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #40c9ff; /* Soft blue for labels */
+    font-size: 3vw;
   }
-  
-  span.tech-time {
-    font-size: 60px;
-    display: block;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(64, 201, 255, 0.8);
-    transition: opacity 0.7s ease, transform 0.3s ease;
-  }
-  
-  span.tech-time {
-    animation: flipIn 0.8s ease;
-  }
-  
-  @keyframes flipIn {
-    0% {
-      opacity: 0;
-      transform: rotateX(-90deg);
-    }
-    100% {
-      opacity: 1;
-      transform: rotateX(0);
-    }
-  }
-  
-  /* Responsive Design */
-  
-  /* For tablets and smaller screens */
-  @media (max-width: 768px) {
-    h1.tech-title {
-      font-size: 32px; /* Slightly smaller on tablets */
-    }
-    
-    #countdown {
-      flex-wrap: wrap; /* Allow elements to wrap */
-      gap: 20px; /* Reduce gap between time sections */
-    }
-  
-    .time-section {
-      width: 100px; /* Narrower sections */
-      padding: 15px;
-    }
-  
-    span.tech-time {
-      font-size: 48px; /* Smaller time digits */
-    }
-  
-    .time-section p {
-      font-size: 14px;
-    }
-  }
-  
-  /* For smaller mobile devices */
-  @media (max-width: 480px) {
-    h1.tech-title {
-      font-size: 28px; /* Make title smaller */
-      margin-bottom: 20px; /* Less space under the title */
-    }
-  
-    .time-section {
-      width: 90px; /* Further reduce size */
-      padding: 12px; /* Less padding for compact sections */
-    }
-  
-    span.tech-time {
-      font-size: 36px; /* Smaller time digits for compact view */
-    }
-  
-    .time-section p {
-      font-size: 12px; /* Reduce size of labels */
-    }
-  
-    #countdown {
-      gap: 15px; /* Even less space between countdown elements */
-    }
-  }
-  
+}
+
