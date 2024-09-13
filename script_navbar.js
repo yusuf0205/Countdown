@@ -4,6 +4,6 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('nav-active');
   
-  // Animate the burger icon
+
   menuToggle.classList.toggle('toggle');
 });
